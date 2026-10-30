@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  postgres-db:
+    image: postgres:15-alpine
+    container_name: san_rafael_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ZEUS
+      POSTGRES_DB: db_san_rafael
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
